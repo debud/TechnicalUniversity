@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Colocviu final</title>
+    <link rel=stylesheet type="text/css" href="index.css">
+</head>
+<body>
+<div>
+    <p style="">Bilet 11</p>
+    <a href="tables.html" class="button">Vizualizare tabele</a>
+    <p>Meniu</p>
+
+    <h2>Optiunile meniului</h2>
+    <h3>1. Sa se gaseasca numarul, valoarea, data chitantelor pentru un apartament in ordinea datei</h3>
+    <h3>2. Sa se gaseasca apartamentele cu suprafata mai mare decat o suprafata data</h3>
+    <h3>3. Sa se gaseasca nume_proprietar, adresa_apartament1, adresa_apartament2 pentru apartamente ce
+        apartin aceluasi propretar (o combinatie de doua apartamente este unica in rezultat )</h3>
+    <h3>4. Sa se gaseasca nume_proprietar, adresa, an luna, valoare pentru apartamentele de pe strada introdusa</h3>
+    <h3>5. Sa se gaseasca adresa apartamentelor si luna cu cea mai mica valoare pentru anul introdus</h3>
+    <h3>6. Sa se gaseasca numele proprietarilor ce detin mai multe apartamente</h3>
+    <h3>7. Sa se gaseasca valoare maxima pentru fiecare apartament</h3>
+    <h3>8. Sa se gaseasca numele restantierilor (suma chitantelor < suma cheltuielilor )</h3>
+    <a href="#">Alegeti o optiune</a>
+    <ul>
+        <li>
+            <a href="#" class="button">1</a>
+            <ul>
+                <li>
+                    <form action="sql1.php" method="get">
+                        ID Apartament: <input type="text" name="id" value="0"><br>
+                        <input type="submit" value="Submit">
+                    </form>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#" class="button">2</a>
+            <ul>
+
+                <li>
+                    <form action="sql2.php" method="get">
+                        Suprafata: <input type="text" name="id" value="0"><br>
+                        <input type="submit" value="Submit">
+                    </form>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <form action="sql3.php" method="post">
+                <button type="submit" class="button">3</button>
+                <ul>
+                    <li></li>
+                </ul>
+            </form>
+        </li>
+        <li>
+            <a href="#" class="button">4</a>
+            <ul>
+                <li>
+                    <form action="sql4.php" method="get">
+                        Strada: <input type="text" name="id" value="0"><br>
+                        <input type="submit" value="Submit">
+                    </form>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#" class="button">5</a>
+            <ul>
+                <li>
+                    <form action="sql5.php" method="get">
+                        An: <input type="text" name="id" value="0"><br>
+                        <input type="submit" value="Submit">
+                    </form>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <form action="sql6.php" method="post">
+                <button type="submit" class="button">6</button>
+                <ul>
+                    <li></li>
+                </ul>
+            </form>
+        </li>
+        <li>
+            <form action="sql7.php" method="post">
+                <button type="submit" class="button">7</button>
+                <ul>
+                    <li></li>
+                </ul>
+            </form>
+        </li>
+        <li>
+            <form action="sql8.php" method="post">
+                <button type="submit" class="button">8</button>
+                <ul>
+                    <li></li>
+                </ul>
+            </form>
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>

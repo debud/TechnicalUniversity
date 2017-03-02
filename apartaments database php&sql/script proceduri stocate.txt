@@ -1,0 +1,40 @@
+PROCEDURI STOCATE 
+--pentru fisierul sql1.php
+
+DELIMITER //
+CREATE PROCEDURE procedure1 (IN id NUMERIC) 
+BEGIN
+    SELECT nr, valoare, data
+	FROM Chitanta
+	WHERE id_ap = id ORDER BY data;
+END //
+DELIMITER ;
+
+--pentru fisierul sql2.php
+
+DELIMITER //
+CREATE PROCEDURE procedure2 (IN sup NUMERIC) 
+BEGIN
+ SELECT id_ap, suprafata
+FROM Apartament
+WHERE suprafata = sup;
+END //
+DELIMITER ;
+
+--pentru fisierul sql6.php
+
+DELIMITER $$
+CREATE PROCEDURE procedure6()
+BEGIN
+SELECT DISTINCT P.nume  as nume
+FROM Proprietar P
+JOIN Apartament A1
+ON P.id_proprietar = A1.id_proprietar
+WHERE EXISTS (SELECT A2.id_proprietar
+FROM Apartament A2
+WHERE A1.id_proprietar = A2.id_proprietar
+AND A1.id_ap <> A2.id_ap);
+END $$
+DELIMITER ;
+
+

@@ -1,0 +1,100 @@
+
+body {
+    background-color: #000672)
+}
+#wrapper {
+    width: 500px;
+    margin: 0 auto;
+}
+
+.button {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 20px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #a587ff;
+    background-color: #0900f4;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #476a99;
+}
+
+.button:hover {background-color: #0800f4
+}
+
+.button:active {
+    background-color: #2539f4;
+    box-shadow: 0 5px #334a66;
+    transform: translateY(4px);
+}
+div {
+    width: 1200px;
+    padding: 15px;
+    border: 25px groove;
+    margin: 30px;
+    text-align: center;
+}
+p {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 30px;
+}
+
+table {
+    text-align:center;
+    margin: auto;
+    border: solid 3px;
+    border-color: black;
+}
+th {
+    background-color: #f6f400;
+    color: black;
+    border: 3px;
+}
+td{
+    border: solid 1px;
+    border-color: black;
+    width: auto;
+    margin: 5px;
+}
+tr{
+    text-align: center;
+    margin: 5px;
+
+}
+
+
+div {background-color: #50f1f2;}
+div a {
+    text-decoration: none;
+    font-size: 20px;
+    padding: 15px;
+    display:inline-block;
+}
+ul {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+ul li {display: inline-block; }
+ul li:hover {background: #555;}
+ul li:hover ul {display: block;}
+ul li ul {
+    position: absolute;
+    width: 200px;
+    display: none;
+}
+ul li ul li {
+    background: #555;
+    display: block;
+}
+ul li ul li a {display:block !important;}
+ul li ul li:hover {background: #666;}
+
+h2 {
+    position: relative;
+    text-align: center;
+}
+

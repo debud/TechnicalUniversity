@@ -1,0 +1,245 @@
+CREATE TABLE Proprietar(
+ id_proprietar numeric,
+ nume VARCHAR(40),
+ telefon VARCHAR(40),
+PRIMARY KEY(id_proprietar) 
+) ;
+
+CREATE TABLE Apartament(
+ id_ap NUMERIC,
+ adresa VARCHAR(40),
+suprafata NUMERIC,
+ id_proprietar NUMERIC,
+ PRIMARY KEY(id_ap),
+ FOREIGN KEY(id_proprietar) REFERENCES Proprietar(id_proprietar) 
+) ;
+
+CREATE TABLE Consum(
+id_ap NUMERIC,
+an NUMERIC,
+luna NUMERIC,
+nrpers NUMERIC,
+cantitate NUMERIC,
+valoare NUMERIC,
+PRIMARY KEY(id_ap, an, luna),
+ FOREIGN KEY(id_ap) REFERENCES Apartament(id_ap)
+);
+
+CREATE TABLE Chitanta(
+nr NUMERIC,
+data DATE,
+id_ap NUMERIC, 
+valoare NUMERIC,
+PRIMARY KEY(nr),
+FOREIGN KEY(id_ap) REFERENCES Apartament(id_ap)
+)
+
+INSERT INTO Proprietar(id_proprietar, nume, telefon)
+VALUES(1, 'Andrescu George', '0754333755');
+
+INSERT INTO Proprietar(id_proprietar, nume, telefon)
+VALUES(2, 'Bogdan Ioan', '0711333755');
+
+INSERT INTO Proprietar(id_proprietar, nume, telefon)
+VALUES(3, 'Leusca Darius', '0744444751');
+
+INSERT INTO Proprietar(id_proprietar, nume, telefon)
+VALUES(4, 'Ionescu Mircea', '0744433771');
+
+INSERT INTO Proprietar(id_proprietar, nume, telefon)
+VALUES(5, 'Gregor Paul', '0744344768');
+
+INSERT INTO Proprietar(id_proprietar, nume, telefon)
+VALUES(6, 'Doe Joe', '0744344468');
+
+INSERT INTO Proprietar(id_proprietar, nume, telefon)
+VALUES(7, 'McCarter Andrew', '0744344055');
+
+INSERT INTO Apartament(id_ap, adresa, suprafata, id_proprietar)
+VALUES (1, 'Motilor 52, Bucuresti, CA 90210', 40, 1);
+
+INSERT INTO Apartament(id_ap, adresa, suprafata, id_proprietar)
+VALUES (9,'Azuga 110, Bucuresti, VEST 11177' , 66, 2);
+
+INSERT INTO Apartament(id_ap, adresa, suprafata, id_proprietar)
+VALUES (13, 'Rasarit 12, Bucuresti, EA 90233', 42, 1);
+
+INSERT INTO Apartament(id_ap, adresa, suprafata, id_proprietar)
+VALUES (14, 'Kogalniceanu 12, Bucuresti, AE 902209', 51, 1);
+
+INSERT INTO Apartament(id_ap, adresa, suprafata, id_proprietar)
+VALUES (479, 'Pandora 81, Bucuresti, EST 88903', 51, 2);
+
+INSERT INTO Apartament(id_ap, adresa, suprafata, id_proprietar)
+VALUES (45, 'Luceafar 17, Bucuresti, QT 82223', 58, 3);
+
+INSERT INTO Apartament(id_ap, adresa, suprafata, id_proprietar)
+VALUES (33, 'Zorilor 101, Bucuresti, OP 82263', 49, 4);
+
+INSERT INTO Apartament(id_ap, adresa, suprafata, id_proprietar)
+VALUES (20, 'Azuga 96, Bucuresti, PI 11163', 55, 5);
+
+INSERT INTO Apartament(id_ap, adresa, suprafata, id_proprietar)
+VALUES (19, 'Azuga 7, Bucuresti, IP 01117', 53, 6);
+
+INSERT INTO Apartament(id_ap, adresa, suprafata, id_proprietar)
+VALUES (10, 'Avenue 32, Bucuresti, LOL 90000', 44, 6);
+
+INSERT INTO Apartament(id_ap, adresa, suprafata, id_proprietar)
+VALUES (11, 'Avenue 33, Bucuresti, LOL 90001', 44, 7);
+
+INSERT INTO Consum(id_ap, an, luna, nrpers, cantitate, valoare)
+VALUES (9, 2016, 9, 3, 21, 500);
+
+INSERT INTO Consum(id_ap, an, luna, nrpers, cantitate, valoare)
+VALUES (9, 2016, 10, 3, 25, 559);
+
+INSERT INTO Consum(id_ap, an, luna, nrpers, cantitate, valoare)
+VALUES (10, 2016, 1, 3, 35, 380);
+
+INSERT INTO Consum(id_ap, an, luna, nrpers, cantitate, valoare)
+VALUES (10, 2016, 2, 3, 35, 380);
+
+INSERT INTO Consum(id_ap, an, luna, nrpers, cantitate, valoare)
+VALUES (479, 2010, 1, 2, 14, 300);
+
+INSERT INTO Consum(id_ap, an, luna, nrpers, cantitate, valoare)
+VALUES (479, 2010, 2, 2, 15, 170);
+
+INSERT INTO Consum(id_ap, an, luna, nrpers, cantitate, valoare)
+VALUES (45, 2005, 1, 1, 10, 200);
+
+INSERT INTO Consum(id_ap, an, luna, nrpers, cantitate, valoare)
+VALUES (33, 2006, 11, 3, 15, 550);
+
+INSERT INTO Consum(id_ap, an, luna, nrpers, cantitate, valoare)
+VALUES (33, 2016, 9, 1, 15, 550);
+
+INSERT INTO Consum(id_ap, an, luna, nrpers, cantitate, valoare)
+VALUES (20, 2015, 10, 3, 20,230);
+
+INSERT INTO Consum(id_ap, an, luna, nrpers, cantitate, valoare)
+VALUES (20, 2015, 11, 4, 25,290);
+
+INSERT INTO Consum(id_ap, an, luna, nrpers, cantitate, valoare)
+VALUES (13, 2011, 7, 4, 24, 650);
+
+INSERT INTO Consum(id_ap, an, luna, nrpers, cantitate, valoare)
+VALUES (1, 2015, 6, 4, 23, 600);
+
+INSERT INTO Consum(id_ap, an, luna, nrpers, cantitate, valoare)
+VALUES (1, 2015, 7, 4, 23, 600);
+
+INSERT INTO Consum(id_ap, an, luna, nrpers, cantitate, valoare)
+VALUES (1, 2015, 8, 4, 23, 610);
+
+INSERT INTO Consum(id_ap, an, luna, nrpers, cantitate, valoare)
+VALUES (14, 2015, 8, 4, 23, 310);
+
+
+INSERT INTO Chitanta(nr, data, id_ap, valoare)
+VALUES (36, '2016-09-19', 9, 500);
+
+INSERT INTO Chitanta(nr, data, id_ap, valoare)
+VALUES (44, '2010-01-28', 479, 300);
+
+INSERT INTO Chitanta(nr, data, id_ap, valoare)
+VALUES (50, '2005-01-12', 45, 200);
+
+INSERT INTO Chitanta(nr, data, id_ap, valoare)
+VALUES (30, '2006-11-17', 33, 550);
+
+INSERT INTO Chitanta(nr, data, id_ap, valoare)
+VALUES (43, '1999-10-20', 20, 450);
+
+INSERT INTO Chitanta(nr, data, id_ap, valoare)
+VALUES (10, '2011-07-21', 13, 650);
+
+INSERT INTO Chitanta(nr, data, id_ap, valoare)
+VALUES (12, '2015-06-14', 1, 600);
+
+INSERT INTO Chitanta(nr, data, id_ap, valoare)
+VALUES (13, '2015-07-14', 1, 605);
+
+INSERT INTO Chitanta(nr, data, id_ap, valoare)
+VALUES (14, '2015-08-14', 1, 610);
+
+
+
+ALTER TABLE Consum
+ADD CONSTRAINT chk_luna CHECK (luna >= 1 AND luna <= 12);
+
+
+ALTER TABLE Consum
+ADD CONSTRAINT chk_pers CHECK (NOT(nrpers > 1) OR cantitate > 2);
+
+
+--11.03 a
+SELECT nr, valoare, data
+FROM Chitanta
+WHERE id_ap =  1
+ORDER BY data
+
+--11.03 b
+SELECT id_ap
+FROM Apartament
+WHERE suprafata > 50
+
+--11.04 a
+
+SELECT P.nume AS nume_proprietar, A1.adresa AS adresa_apartament1, A2.adresa AS adresa_apartament2
+FROM Proprietar P 
+JOIN Apartament A1 ON (P.id_proprietar = A1.id_proprietar)	
+JOIN Apartament A2 where (A1.adresa < A2.adresa AND A1.id_proprietar = A2.id_proprietar)
+
+--11.04 b 
+SELECT P.nume AS nume_proprietar, A.adresa AS adresa, C.an AS an, C.luna AS luna, C.valoare AS valoare
+FROM proprietar P
+JOIN APARTAMENT A on P.id_proprietar = A.id_proprietar
+JOIN Consum C on A.id_ap = C.id_ap
+where SUBSTR(A.adresa,1,5) = 'Azuga';
+
+--11.05 a
+
+SELECT A.adresa as adresa , C.luna as luna
+FROM Apartament A
+JOIN Consum C 
+ ON (A.id_ap= C.id_ap)
+WHERE C.an = 2015 AND C.valoare <= ALL (SELECT C2.VALOARE
+FROM Consum C2
+WHERE C2.an = 2015 AND C2.id_ap = C.id_ap )
+
+--11.05 b
+
+SELECT DISTINCT P.nume as nume
+FROM Proprietar P
+JOIN Apartament A1
+ON P.id_proprietar = A1.id_proprietar
+WHERE EXISTS (SELECT A2.id_proprietar
+FROM Apartament A2
+WHERE A1.id_proprietar = A2.id_proprietar
+AND A1.id_ap <> A2.id_ap)
+
+--11.06 a)
+
+SELECT C1.valoare AS "VALOAREA MAXIMA", C1.id_ap AS "ID APARTAMENT"
+FROM Consum C1
+WHERE C1.valoare = 
+(SELECT MAX(C2.valoare)
+FROM Consum C2
+WHERE C2.id_ap = C1.id_ap) 
+
+-- 11.06 b) 
+SELECT  P.nume AS "Nume restantier" , A.id_ap AS "Apartamentul restant"
+FROM Proprietar P
+JOIN Apartament A
+ON A.id_proprietar = P.id_proprietar
+WHERE A.id_ap IN
+(SELECT C.id_ap
+FROM Consum C 
+GROUP BY C.id_ap
+HAVING SUM(C.valoare) > 
+(SELECT  IFNULL(SUM(T.valoare), 0)
+FROM CHITANTA T
+WHERE T.id_ap = C.id_ap)
+)
